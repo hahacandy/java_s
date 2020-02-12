@@ -2,7 +2,7 @@ package oracle.exam2;
 
 import java.sql.Connection;
 
-import oracle.db.DBManager;
+import db.DBManager;
 
 public class DBTest {
 

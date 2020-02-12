@@ -3,12 +3,12 @@ package oracle.dao;
 import java.sql.*;
 import java.util.*;
 
-import oracle.db.DBManager;
-import oracle.dto.DeptVO;
-import oracle.dto.EmpVO;
+import db.DBManager;
+import model.DeptVO;
+import model.EmpVO;
 
 public class SawonDAO {
-	DBManager manager = DBManager.getInstance();
+	oracle.db.DBManager manager = oracle.db.DBManager.getInstance();
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;

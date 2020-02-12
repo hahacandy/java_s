@@ -2,9 +2,9 @@ package oracle.exam2;
 
 import java.util.List;
 
+import model.DeptVO;
+import model.EmpVO;
 import oracle.dao.SawonDAO;
-import oracle.dto.DeptVO;
-import oracle.dto.EmpVO;
 
 public class Exam_01 {
 

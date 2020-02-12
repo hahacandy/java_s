@@ -3,8 +3,8 @@ package oracle.exam3;
 import java.util.List;
 import java.util.Scanner;
 
+import model.EmpVO;
 import oracle.dao.SawonDAO;
-import oracle.dto.EmpVO;
 
 /*	키보드 입력
  * 	부서번호 또는 직급(업무명)이 같은 사원 정보 출력
