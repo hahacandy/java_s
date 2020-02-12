@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>score</title>
+<style type="text/css">
+	* {
+		magin:0; padding:0; bix-sizing:border-box;
+	}
+		
+	table, th, td {
+		border:1px solid #ccc;
+	}
+	
+	.shopList{
+		margin: 0 auto;
+	}
+	
+	.container{
+		width:500px;
+		height:200px;
+		border:1px solid red;
+	}
+	
+</style>
+<script type="text/javascript">
+	function proc(){
+		var kor = score.t_kor.value;
+		var eng = score.t_eng.value;
+		var mat = score.t_mat.value;
+		
+		var total = Number(kor)+Number(eng)+Number(mat);
+		
+		score.t_total.value = total;
+		
+		score.t_ave.value = total/3;
+		
+		if(score.t_ave.value >= 80)
+			score.t_result.value = "합격";
+		else
+			score.t_result.value = "불합격";
+		
+		//alert(total);
+
+	}
+	
+</script>
+</head>
+<body>
+
+	<div class="container">
+		
+		<!-- method:get 소량의 데이터, 눈에보임, post 대량의 데이터, 눈에 안보임, action:입력된 값을 처리하는 프로그램 -->
+		<form name="score">
+		
+			<!-- 표 만들기  -->
+			<table class="shopList">
+				<tr>
+					<th>국어</th>
+					<td><input type="text" name="t_kor"></input></td>
+				</tr>
+				
+				<tr>
+					<th>영어</th>
+					<td><input type="text" name="t_eng"></input></td>
+				</tr>
+				
+				<tr>
+					<th>수학</th>
+					<td><input type="text" name="t_mat"></input></td>
+				</tr>
+				
+				<tr>
+					<th>총점</th>
+					<td><input type="text" name="t_total"></input></td>
+				</tr>
+				
+				<tr>
+					<th>평균</th>
+					<td><input type="text" name="t_ave"></input></td>
+				</tr>
+				
+				<tr>
+					<th>평가</th>
+					<td><input type="text" name="t_result"></input></td>
+				</tr>
+				
+				<tr>
+					<td colspan="2">
+						<input type="button" onclick="proc()" value="계산">&nbsp;&nbsp;
+						<input type="reset" value="다시쓰기">
+					</td>
+				</tr>
+				
+			</table>
+			
+		</form>
+		
+	</div>
+	
+</body>
+</html>

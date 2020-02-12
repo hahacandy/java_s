@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>정보처리 산업기사 실기 연습</title>
+	
+	
+	
+	
+<style type="text/css">
+	* {
+		magin:0; padding:0; bix-sizing:border-box;
+	}
+	
+
+	#aaa {
+		color:#f00; font-size:26px; letter-apacing:-1px; /* #아이디 letter-apacing자간간격 */
+		border:1px solid #00f; margin-bottom: 60px; /*여러개의값을 넣을땐 무조건 한칸 띄어야함*/
+	}
+	
+	#aaa {text-align:center; background:#00f; color:#fff}
+	#aaa h1 {text-align:center; color:#fff}
+		
+		
+	.bbb {
+		color:#ccc; font-size:18px; font-family:"궁서체";	/* 클래스 font-family폰트모양 */
+		border:1px solid #ccc; width:600px; height:60px;
+		text-align: center; line-height:60px; margin:0 auto; /* margin 0(상하) auto(가로) */
+		background:#00f;
+	}
+		
+	.list{
+		list-style: none; /* list스타일을 사용하지 않는다! */
+	}
+	
+	
+	
+	.navi .list li{ /* 하위선택자, 한칸씩 띄워야함 */
+		display: inline-block; /* 100%짜리가 inline요소(글짜의 크기만큼의 가로 폭)로 바뀜, 다시 100%로 강제로 바꾸려면 block */
+		width:120px; /* width 요소는 block스타일의 옵션 , 그렇기 때문에 inline-block사용 */
+		text-align: center;
+	}
+	
+	a {	/* 태그에 직접 스타일 시트를 부여 할 수 있다 */
+		 color:#000;/* 검정 000, 흰색 fff RGB f00(red), 0f0(green), 00f(blue) */
+		 text-decoration:none;
+		
+	}
+	
+	table, th, td {
+		border:1px solid #ccc;
+	}
+	
+	.shopList{
+		margin: 0 auto;
+	}
+	
+	
+</style>
+</head>
+<body>
+	<div id="aaa">
+		<h1>정보처리 산업기사</h1> <!-- 제목을 나타내는 태그 -->
+		&lt;div&gt;태그는&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;그룹을 만드는 태그 입니다&lt;/div&gt;
+	</div>
+	
+	<!-- 
+	<div>
+		<div class="bbb">
+			그룹 만들기 연습중 입니다
+		</div>
+	</div>
+	 -->
+	
+	<div class="navi">
+		<ul class="list"> <!-- 순서가 없는 목록 태그 ul -->
+			<li><a href="com.jsp">회사소개</a></li>
+			<li><a href="insert.html">상품등록</a></li>
+			<li><a href="search.jsp">상품검색</a></li>
+			<li><a href="member.jsp?command=aaa">회원가입</a></li>
+			<li><a href="delete.html">상품삭제</a></li>
+		</ul>
+	</div>
+	
+	
+	<div class="container">
+		<!-- 표 만들기  -->
+		<table class="shopList">
+			<tr> <!-- 한줄 -->
+				<th>번호</th> <!-- 번호 -->
+				<th>제목</th>
+				<th>작성일</th>
+				<td>조회수</td>
+			</tr>
+			
+			<tr>
+				<td>10</td>
+				<td>표만들기 연습 하는 중 입니다</td>
+				<td>2020-02-10</td>
+				<td>212</td>
+			</tr>
+			
+			<tr>
+				<td colsapan="4"><a href="insert.html">글쓰기</a></td> <!-- colsapan 4칸을 한칸으로 합치셈 -->
+			</tr>
+		</table>
+	</div>
+	
+</body>
+</html>

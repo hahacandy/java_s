@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>정보처리 산업기사 실기 연습</title>
+	
+<style type="text/css">
+	* {
+		magin:0; padding:0; bix-sizing:border-box;
+	}
+	
+
+	#aaa {
+		color:#f00; font-size:26px; letter-apacing:-1px; /* #아이디 letter-apacing자간간격 */
+		border:1px solid #00f; margin-bottom: 60px; /*여러개의값을 넣을땐 무조건 한칸 띄어야함*/
+	}
+	
+	#aaa {text-align:center; background:#00f; color:#fff}
+	#aaa h1 {text-align:center; color:#fff}
+		
+		
+	.bbb {
+		color:#ccc; font-size:18px; font-family:"궁서체";	/* 클래스 font-family폰트모양 */
+		border:1px solid #ccc; width:600px; height:60px;
+		text-align: center; line-height:60px; margin:0 auto; /* margin 0(상하) auto(가로) */
+		background:#00f;
+	}
+		
+	.list{
+		list-style: none; /* list스타일을 사용하지 않는다! */
+	}
+	
+	
+	
+	.navi .list li{ /* 하위선택자, 한칸씩 띄워야함 */
+		display: inline-block; /* 100%짜리가 inline요소(글짜의 크기만큼의 가로 폭)로 바뀜, 다시 100%로 강제로 바꾸려면 block */
+		width:120px; /* width 요소는 block스타일의 옵션 , 그렇기 때문에 inline-block사용 */
+		text-align: center;
+	}
+	
+	a {	/* 태그에 직접 스타일 시트를 부여 할 수 있다 */
+		 color:#000;/* 검정 000, 흰색 fff RGB f00(red), 0f0(green), 00f(blue) */
+		 text-decoration:none;
+		
+	}
+	
+	table, th, td {
+		border:1px solid #ccc;
+	}
+	
+	.shopList{
+		margin: 0 auto;
+	}
+	
+	
+</style>
+</head>
+<body>
+	<div id="aaa">
+		<h1>정보처리 산업기사</h1> <!-- 제목을 나타내는 태그 -->
+		&lt;div&gt;태그는&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;그룹을 만드는 태그 입니다&lt;/div&gt;
+	</div>
+	
+	<!-- 
+	<div>
+		<div class="bbb">
+			그룹 만들기 연습중 입니다
+		</div>
+	</div>
+	 -->
+	
+	<div class="navi">
+		<ul class="list"> <!-- 순서가 없는 목록 태그 ul -->
+			<li><a href="com.jsp">회사소개</a></li>
+			<li><a href="insert.html">상품등록</a></li>
+			<li><a href="search.jsp">상품검색</a></li>
+			<li><a href="member.jsp?command=aaa">회원가입</a></li>
+			<li><a href="delete.html">상품삭제</a></li>
+		</ul>
+	</div>
+	
+	
+	<div class="container">
+		
+		<!-- method:get 소량의 데이터, 눈에보임, post 대량의 데이터, 눈에 안보임, action:입력된 값을 처리하는 프로그램 -->
+		<form name="my" method="post" action="memberIndert.jsp">
+		
+			<!-- 표 만들기  -->
+			<table class="shopList">
+				<tr>
+					<th>아이디</th>
+					<td><input type="text" name="id"></input></td>
+				</tr>
+				
+				<tr>
+					<th>패스워드</th>
+					<td><input type="password" name="pw"></input></td>
+				</tr>
+				
+				<tr>
+					<th>성별</th>
+					<td>
+						<input type="radio" name="gender" value="t">남
+						<input type="radio" name="gender" value="m" checked>여
+					</td>
+				</tr>
+				
+				<tr>
+					<th>취미</th>
+					<td>
+						<!-- checkbox의 name이 똑같은 변수이고, input이 여러개이면 배열로 넘어감  -->
+						<input type="checkbox" name="hobby" value="01"> 낚시
+						<input type="checkbox" name="hobby" value="02"> 등산
+						<input type="checkbox" name="hobby" value="03"> 볼링
+						<input type="checkbox" name="hobby" value="04"> 게임
+						<input type="checkbox" name="hobby" value="05"> 여행
+					</td>
+				</tr>
+				
+				<tr>
+					<th>부서</th>
+					<td>
+						<select name="dept">
+							<option>선택</option>
+							<option value="aa">교육부</option>
+							<option value="bb">홍보부</option>
+							<option value="cc">영업부</option>
+							<option value="dd">경리부</option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="저장">&nbsp;&nbsp;
+						<!-- 
+							입력받은 모든값을 action="" 프로그램으로
+							전송하여 처리 하세요
+						 -->
+						<input type="reset" value="다시쓰기">
+					</td>
+				</tr>
+				
+			</table>
+			
+		</form>
+		
+	</div>
+	
+	<div class="footer">
+		<p>copyright All rights reverved.</p>
+	</div>
+	
+</body>
+</html>
