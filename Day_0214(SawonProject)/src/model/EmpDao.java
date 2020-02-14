@@ -130,8 +130,12 @@ public class EmpDao {
 		if(EmpVOs != null) {
 			for(EmpVO vo : EmpVOs) {
 				String query2 = "SELECT * FROM employee WHERE eno=(SELECT manager FROM employee WHERE eno = '"+ vo.getEno() +"')";
-				String managerName = selectQuery(query2).get(0).getEname();
-				vo.setManager2(managerName);
+				List<EmpVO> temp = selectQuery(query2); //상사가 있으면
+				if(temp != null)
+				{
+					String managerName = temp.get(0).getEname();
+					vo.setManager2(managerName);
+				}
 			}
 		}
 		
