@@ -206,7 +206,7 @@ public class Ui {
 			hakbun = scn.nextInt();
 			if(hakbun == 0000)
 				return;
-			else if(hakbun < 1000 && hakbun > 10000) {
+			else if(hakbun < 1100 && hakbun > 10000) {
 				System.out.println("학번 최소 4자리 입니다!");
 			}else {
 				break;
