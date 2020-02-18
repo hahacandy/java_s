@@ -113,13 +113,13 @@ public class Ui {
 			
 			if(isYes(scn, "수정 할까요?")) {
 
-					infos.add("str," + name);
-					infos.add("str," + addr);
-					infos.add("str," + email);
-					infos.add("str," + birth);
-					
-					row = dao.modifyStudent(hakbun, infos);
-					printUpdate(row, name + " 학생정보가 수정이 완료됨.", name + " 학생정보가 수정이 실패함.");
+				infos.add("str," + name);
+				infos.add("str," + addr);
+				infos.add("str," + email);
+				infos.add("str," + birth);
+
+				row = dao.modifyStudent(hakbun, infos);
+				printUpdate(row, name + " 학생정보가 수정이 완료됨.", name + " 학생정보가 수정이 실패함.");
 			}
 			
 		}
