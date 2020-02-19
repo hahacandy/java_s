@@ -49,13 +49,13 @@ public class UiManager {
 	}
 	
 	//날짜 입력기
-	protected String inputDate(Scanner scn, String value) {
+	protected String inputDate(Scanner scn, String value, String mode) {
 		String date = null;
 		while(true) {
 			System.out.print(value);
 			date = scn.nextLine();
 			
-			if(date.length() == 0) {
+			if(mode.equalsIgnoreCase("skip") && date.length() == 0) {
 				break;
 			}else if(date.matches("((19[0-9]{2}|20[0-9]{2})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]))|"
 					+ "((19[0-9]{2}|20[0-9]{2})(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1]))")) {

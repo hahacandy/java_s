@@ -92,8 +92,6 @@ public class Ui extends UiManager{
 			
 			while(true) {
 				System.out.print("바꾸려는 도서코드:");
-				code = scn.nextInt();
-
 				try {
 					code = Integer.valueOf(scn.nextLine());
 				}catch (Exception e) {}
@@ -107,9 +105,9 @@ public class Ui extends UiManager{
 			}
 			
 
-			outDate = inputDate(scn, "바꾸려는 대출일자:");
+			outDate = inputDate(scn, "바꾸려는 대출일자:", "skip");
 			
-			inDate = inputDate(scn, "바꾸려는 반납일자:");
+			inDate = inputDate(scn, "바꾸려는 반납일자:", "skip");
 			
 			if(isYes(scn, "수정하시겠습니까?")) {
 				if(name.length() > 0 )
@@ -193,10 +191,10 @@ public class Ui extends UiManager{
 		}
 		
 
-		outDate = inputDate(scn, "대출일자:");
+		outDate = inputDate(scn, "대출일자:", "");
 		
 		
-		inDate = inputDate(scn, "반납일자:");
+		inDate = inputDate(scn, "반납일자:", "skip");
 		
 		if(isYes(scn, "등록하시겠습니까?")) {
 			IInfos.add(name);

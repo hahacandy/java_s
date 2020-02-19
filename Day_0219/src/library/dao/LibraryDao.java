@@ -19,7 +19,7 @@ public class LibraryDao {
 	//책 반납
 	public int returnReservation(int bun) {
 		int row = 0;
-		String query = "UPDATE reservation SET status=2 WHERE lentno="+bun;
+		String query = "UPDATE reservation SET indate=SYSDATE, status=2 WHERE lentno="+bun;
 		row = query(query, null);
 		return row;
 	}
