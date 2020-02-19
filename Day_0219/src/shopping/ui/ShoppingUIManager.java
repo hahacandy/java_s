@@ -52,81 +52,75 @@ public class ShoppingUIManager {
 	//예약 리스트 출력 메소드
 	protected boolean printMember(List<ShoppingVO> list) {
 		if(list != null) {
-			String len1N = "custno";
-			String len2N = "custname";
-			String len3N = "phone";
-			String len4N = "gender";
-			String len5N = "joindate";
-			String len6N = "grade";
-//			String len7N = "status";
+			List<String> lenNs = new ArrayList<String>();
+			List<Integer> lens = new ArrayList<Integer>();
 			
-			int len1 = len1N.length();
-			int len2 = len2N.length();
-			int len3 = len3N.length();
-			int len4 = len4N.length();
-			int len5 = len5N.length();
-			int len6 = len6N.length();
-//			int len7 = len7N.length();
+			lenNs.add("custno");
+			lenNs.add("custname");
+			lenNs.add("phone");
+			lenNs.add("gender");
+			lenNs.add("joindate");
+			lenNs.add("grade");
 			
-			int to_len1 = 0;
-			int to_len2 = 0;
-			int to_len3 = 0;
-			int to_len4 = 0;
-			int to_len5 = 0;
-			int to_len6 = 0;
-//			int to_len7 = 0;
+			for(int i=0; i<lenNs.size(); i++) {
+				lens.add(lenNs.get(i).length());
+			}
 			
-			for(ShoppingVO vo : list) {
-				to_len1 = String.valueOf(vo.getCustNo()).length(); 
-				if(len1 < to_len1)
-					len1 = to_len1;
+			int to_len = 0;
+			for(int i=0; i<list.size(); i++) {
 				
-				to_len2 = vo.getCustName().length();
-				if(len2 < to_len2)
-					len2 = to_len2;
+				to_len = getLength(list.get(i).getCustNo());
+				if(lens.get(0) < to_len) {
+					lens.set(0, to_len);
+				}
 				
-				to_len3 = vo.getPhone().length();
-				if(len3 < to_len3)
-					len3 = to_len3;
+				to_len = getLength(list.get(i).getCustName());
+				if(lens.get(1) < to_len) {
+					lens.set(1, to_len);
+				}
 				
-				to_len4 = String.valueOf(vo.getGender()).length();
-				if(len4 < to_len4)
-					len4 = to_len4;
+				to_len = getLength(list.get(i).getPhone());
+				if(lens.get(2) < to_len) {
+					lens.set(2, to_len);
+				}
+
+				to_len = getLength(list.get(i).getGender());
+				if(lens.get(3) < to_len) {
+					lens.set(3, to_len);
+				}
 				
-				to_len5 = vo.getJoinDate().length();
-				if(len5 < to_len5)
-					len5 = to_len5;
+				to_len = getLength(list.get(i).getJoinDate());
+				if(lens.get(4) < to_len) {
+					lens.set(4, to_len);
+				}
 				
-				to_len6 = vo.getGrade().length();
-				if(len6 < to_len6)
-					len6 = to_len6;
-				
-//				to_len7 = vo.getStatus().length();
-//				if(len7 < to_len7)
-//					len7 = to_len7;
+				to_len = getLength(list.get(i).getGrade());
+				if(lens.get(5) < to_len) {
+					lens.set(5, to_len);
+				}
 				
 			}
 			
-			len1 += 3;
-			len2 += 3;
-			len3 += 3;
-			len4 += 3;
-			len5 += 3;
-			len6 += 3;
-//			len7 += 3;
+			for(int i=0; i<lens.size(); i++) {
+				lens.set(i, lens.get(i)+3);
+			}
 			
+			System.out.println();
 			System.out.println("총 " + list.size() + "명의 회원목록을 표시합니다.");
 			System.out.println();
-			System.out.printf("%-"+len1+"s%-"+len2+"s%-"+len3+"s%-"+len4+"s%-"+len5+"s%-"+len6+"s%n",
-					len1N, len2N, len3N, len4N, len5N, len6N);
+			
+			for(int i=0; i<lenNs.size(); i++) {
+				System.out.printf("%-"+lens.get(i)+"s", lenNs.get(i));
+			}
+			System.out.println();
+			
 			for(ShoppingVO vo: list) {
-				System.out.printf("%-"+len1+"d", vo.getCustNo());
-				System.out.printf("%-"+len2+"s", vo.getCustName());
-				System.out.printf("%-"+len3+"s", vo.getPhone());
-				System.out.printf("%-"+len4+"s", vo.getGender());
-				System.out.printf("%-"+len5+"s", vo.getJoinDate());
-				System.out.printf("%-"+len6+"s", vo.getGrade());
-//				System.out.printf("%-"+len7+"s", (vo.getStatus().equals("1")) ? "대출중":"반납완료");
+				System.out.printf("%-"+lens.get(0)+"d", vo.getCustNo());
+				System.out.printf("%-"+lens.get(1)+"s", vo.getCustName());
+				System.out.printf("%-"+lens.get(2)+"s", vo.getPhone());
+				System.out.printf("%-"+lens.get(3)+"s", vo.getGender());
+				System.out.printf("%-"+lens.get(4)+"s", vo.getJoinDate());
+				System.out.printf("%-"+lens.get(5)+"s", vo.getGrade());
 				System.out.println();
 			}
 			System.out.println();
@@ -137,6 +131,17 @@ public class ShoppingUIManager {
 			System.out.println();
 			return false;
 		}
+	}
+	
+	private int getLength(Object input) {
+		int length=0;
+		
+		if(input instanceof String)
+			length = ((String) input).length();
+		else if (input instanceof Integer)
+			length = String.valueOf(((Integer)input)).length();
+		
+		return length;
 	}
 	
 }
