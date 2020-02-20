@@ -29,7 +29,7 @@ SELECT EMPLOYEES.ename AS "사원이름",
 	WHERE EMPLOYEES.manager = MANAGER.eno;
 
 SELECT ename, job, dno, dname
-	FROM employee NATURAL JOIN DEPARTMENT
+	FROM employee NATURAL JOIN department
 	WHERE loc='NEW YORK'
 
 SELECT E.ename, D.dname
