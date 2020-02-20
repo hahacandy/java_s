@@ -16,15 +16,15 @@ SELECT ME.ename AS 이름, ME.dno AS 부서번호, OTHER.ename AS 동료
 	AND OTHER.ename!='SCOTT'
 
 SELECT EMP.ename AS "Employee",
-			EMP.manager AS "Emp#",
-			MGR.eno AS "Manager",
-			MGR.ename AS "Mgr#"
+	EMP.manager AS "Emp#",
+	MGR.eno AS "Manager",
+	MGR.ename AS "Mgr#"
 	FROM employee EMP, employee MGR
 	WHERE EMP.manager=MGR.eno(+)
 	ORDER BY EMP.eno DESC;
 
 SELECT EMPLOYEES.ename AS "사원이름",
-				MANAGER.ename AS "직속상관이름"
+	MANAGER.ename AS "직속상관이름"
 	FROM employee EMPLOYEES, employee MANAGER
 	WHERE EMPLOYEES.manager = MANAGER.eno;
 
