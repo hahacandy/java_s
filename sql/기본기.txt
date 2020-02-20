@@ -1,0 +1,4 @@
+INSERT INTO 테이블(컬럼1, 컬럼2, 컬럼3) VALUES(넣을값1,넣을값2.넣을값3) WHELE 컬럼=찾는값
+DELETE FROM 테이블 WHERE 컬럼=찾는값
+UPDATE 테이블 SET 컬럼1=넣을값1, 컬럼2=넣을값2, 컬럼3=넣을값3 WHERE 컬럼=찾는값
+SELETE * FROM 테이블 WHERE 컬럼=찾는값
