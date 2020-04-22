@@ -1,3 +1,6 @@
+시퀀스 생성
+CREATE SEQUENCE [시퀀스명]
+
 테이블 생성시 외래키
 CREATE TABLE 테이블이름(
   customer_sid INTEGER REFERENCES customer (sid),
